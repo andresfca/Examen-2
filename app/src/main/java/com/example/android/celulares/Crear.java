@@ -40,14 +40,56 @@ public class Crear extends AppCompatActivity {
         double precio;
         int ram;
         String color, marca, so;
-        precio = Double.parseDouble(cajaPrecio.getText().toString());
-        ram = Integer.parseInt(cajaRam.getText().toString());
-        marca = comboMarca.getSelectedItem().toString();
-        so = comboSo.getSelectedItem().toString();
-        color=comboColor.getSelectedItem().toString();
 
-        Celular c = new Celular(precio,ram,marca,so,color);
-        c.guardar();
-        Toast.makeText(this,resources.getString(R.string.mensajeExitoso),Toast.LENGTH_SHORT).show();
+        if (validar()) {
+            precio = Double.parseDouble(cajaPrecio.getText().toString());
+            ram = Integer.parseInt(cajaRam.getText().toString());
+            marca = comboMarca.getSelectedItem().toString();
+            so = comboSo.getSelectedItem().toString();
+            color = comboColor.getSelectedItem().toString();
+
+            Celular c = new Celular(precio, ram, marca, so, color);
+            c.guardar();
+            Toast.makeText(this, resources.getString(R.string.mensajeExitoso), Toast.LENGTH_SHORT).show();
+            cajaPrecio.setText("");
+            cajaRam.setText("");
+            comboColor.setSelection(0);
+            comboMarca.setSelection(0);
+            comboSo.setSelection(0);
+            cajaPrecio.requestFocus();
+        }
     }
+
+    public boolean validar(){
+        if(cajaPrecio.getText().toString().isEmpty()){
+            cajaPrecio.setError(resources.getString(R.string.error));
+            return false;
+        }
+        if(cajaRam.getText().toString().isEmpty()){
+            cajaRam.setError(resources.getString(R.string.error1));
+            return false;
+        }
+        if(cajaPrecio.getText().toString().equalsIgnoreCase("0")){
+            cajaPrecio.setError(resources.getString(R.string.error2));
+            return false;
+        }
+        if(cajaRam.getText().toString().equalsIgnoreCase("0")){
+            cajaRam.setError(resources.getString(R.string.error3));
+            return false;
+        }
+        return true;
+    }
+
+    public void borrar1(View v){ limpiar(); }
+
+    public void limpiar(){
+        cajaPrecio.setText("");
+        cajaRam.setText("");
+        comboColor.setSelection(0);
+        comboMarca.setSelection(0);
+        comboSo.setSelection(0);
+        cajaPrecio.requestFocus();
+    }
+
+
 }

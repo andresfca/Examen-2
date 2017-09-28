@@ -55,7 +55,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ram"
-                    android:textAlignment="viewStart"
                     android:textStyle="bold" />
 
                 <TextView

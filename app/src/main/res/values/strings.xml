@@ -35,7 +35,7 @@
     <string name="mostrar">MOSTRAR</string>
     <string name="celularAd">AÑADIR CELULAR</string>
     <string name="agregar">AGREGAR</string>
-    <string name="cancelar">CANCELAR</string>
+    <string name="cancelar">BORRAR</string>
     <string name="precio">Precio:</string>
     <string name="ram">RAM:</string>
     <string name="marca">Marca:</string>
@@ -62,4 +62,11 @@
     <string name="todos">Todos los registros</string>
     <string name="numero">No.</string>
     <string name="registros">TODOS LOS REGISTROS</string>
+    <string name="mensajeApple">El número de celulares Apple color negro son:</string>
+    <string name="registro">REGISTROS</string>
+    <string name="mensajeNokia">El precio promedio de los celulares marca Nokia es:</string>
+    <string name="error">Digite el precio</string>
+    <string name="error1">Digite la RAM</string>
+    <string name="error2">El precio no puede ser 0</string>
+    <string name="error3">La RAM no puede ser 0</string>
 </resources>
